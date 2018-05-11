@@ -137,7 +137,6 @@
     <Content Include="Global.asax" />
     <Content Include="Resources\logo.png" />
     <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery.fileupload\canvas-to-blob.js" />
     <Content Include="Scripts\jquery.fileupload\cors\jquery.postmessage-transport.js" />
