@@ -1,6 +1,6 @@
-# AutoBusiness.File
+# ASP.NET + jQuery-File-Upload 文件上传
 
-## 支持三种模式
+## 支持三种上传模式
 ## iframe上传
 * 支持大部分浏览器
 * 支持多文件上传
@@ -15,5 +15,5 @@
 * 只支持图片
 * 支持图片前台压缩
 
-## jQuery-File-Upload
+## jQuery插件
 https://github.com/blueimp/jQuery-File-Upload
