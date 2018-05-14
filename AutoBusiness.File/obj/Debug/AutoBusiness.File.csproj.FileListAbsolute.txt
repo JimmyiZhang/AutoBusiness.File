@@ -89,3 +89,4 @@ D:\Projects\Cabbage\AutoBusiness.File\AutoBusiness.File\bin\System.Web.WebPages.
 D:\Projects\Cabbage\AutoBusiness.File\AutoBusiness.File\bin\System.Web.WebPages.Deployment.xml
 D:\Projects\Cabbage\AutoBusiness.File\AutoBusiness.File\obj\Debug\AutoBusiness.File.dll
 D:\Projects\Cabbage\AutoBusiness.File\AutoBusiness.File\obj\Debug\AutoBusiness.File.pdb
+D:\Projects\Cabbage\AutoBusiness.File\AutoBusiness.File\obj\Debug\AutoBusiness.File.csprojResolveAssemblyReference.cache

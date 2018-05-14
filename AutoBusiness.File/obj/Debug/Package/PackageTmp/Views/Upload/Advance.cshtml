@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Advance";
+}
+
+<form id="fileupload" method="POST" enctype="multipart/form-data">
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+    <div class="row fileupload-buttonbar">
+        <div class="col-lg-7">
+            <!-- The fileinput-button span is used to style the file input field as button -->
+            <span class="btn btn-success fileinput-button">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span>iframe upload and resize</span>
+                <input type="file" name="files[]" id="fileIframe" multiple>
+            </span>
+            <!-- The global file processing state -->
+            <span class="fileupload-process"></span>
+        </div>
+        <!-- The global progress state -->
+        <div class="col-lg-5 fileupload-progress fade">
+            <!-- The global progress bar -->
+            <div class="progress progress-striped active" role="progressbar" id="progress" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+            </div>
+            <!-- The extended global progress state -->
+            <div class="progress-extended">&nbsp;</div>
+        </div>
+        <div id="fileName">
+
+        </div>
+        <div id="fileView">
+
+        </div>
+    </div>
+    <!-- The table listing the files available for upload/download -->
+</form>
+
+@section footer{
+    <script>
+        $(function () {
+            'use strict';
+            // iframe上传
+            $('#fileIframe').fileupload({
+                url: '/file/uploadfile',
+                type: 'POST',
+                dataType: 'json',
+                maxFileSize: 10000000,
+                acceptFileTypes: /(\.)(gif|jpeg|jpg|png|bmp)$/i,
+
+                disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
+                imageMaxWidth: 80,
+                imageMaxHeight: 80,
+                imageCrop: true,
+
+                forceIframeTransport: true,
+                redirect: "http://" + window.location.host + "/content/upload/result.html?",//回调页面
+                done: function (e, data) {
+                    $.each(data.result, function (index, file) {
+                        $('<p/>').text('iframe上传' + file.name).appendTo('#fileName');
+                        $('<img>').attr("src", "/files/" + file.url).appendTo('#fileView');
+                    });
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress .progress-bar').css(
+                        'width',
+                        progress + '%'
+                    );
+                }
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+        });
+    </script>
+}
