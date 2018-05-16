@@ -200,4 +200,6 @@ FakesAssemblies/
 *.project
 *.gitignore
 
+Autobusiness.File.Build/
+
 
